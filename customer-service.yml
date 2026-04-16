@@ -17,3 +17,25 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+
+# Logging configuration
+logging:
+  file:
+    name: logs/customer-service.log
+    max-size: 10MB
+    max-history: 30
+    total-size-cap: 1GB
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: INFO
+    org.credera.training.customerservice: INFO
+    org.credera.training.customerservice.rest.CustomerController: INFO
+    org.springframework: INFO
+    org.springframework.web: INFO
+    org.springframework.cloud: INFO
+    org.hibernate: INFO
+    org.hibernate.SQL: DEBUG
+    com.netflix.discovery: INFO
+    com.netflix.eureka: INFO
